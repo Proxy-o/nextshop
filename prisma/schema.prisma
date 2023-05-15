@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+    provider        = "prisma-client-js"
     previewFeatures = ["jsonProtocol"]
 }
 
@@ -59,9 +59,16 @@ model User {
 }
 
 model VerificationToken {
-    identifier String @id @map("_id")
+    identifier String   @id @map("_id")
     token      String   @unique
     expires    DateTime
 
     @@unique([identifier, token])
+}
+
+model Product {
+    id       String @id @default(auto()) @map("_id") @db.ObjectId
+    name     String
+    price    Float
+    quantity Int
 }
