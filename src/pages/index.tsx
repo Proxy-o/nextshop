@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Products from "~/features/products/pages";
 import { Button } from "~/layouts/components/ui/button";
 import { Header } from "~/layouts/header";
 
@@ -9,9 +10,7 @@ const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
   return (
-      <main >
-        
-      </main>
+      <Products/>
   );
 };
 
