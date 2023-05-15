@@ -14,14 +14,16 @@ export const ProductCard = ({ product }: { product: Product }) => {
     <Card className="shadow-lg">
       <CardHeader>
         <Image
-          src={product.image ?? "https://via.placeholder.com/150"}
+          src={product.image || "https://via.placeholder.com/150"}
           alt="iphone"
           width={900}
           className="w-full"
           height={900}
         />
-        <CardTitle>{product.name}</CardTitle>
-        <CardDescription>{product.price}</CardDescription>
+        <CardTitle className="text-center">{product.name}</CardTitle>
+        <CardDescription className="text-center">
+          {product.price}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <p>{product.quantity}</p>

@@ -18,5 +18,16 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "backend.nextly.shop",
+        port: "",
+        pathname: "/images/uploads/products/**",
+      },
+    ],
+  },
 };
 export default config;
