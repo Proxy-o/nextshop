@@ -1,22 +1,31 @@
-import Image from 'next/image'
-import React from 'react'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '~/layouts/components/ui/card'
+import Image from "next/image";
+import React from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "~/layouts/components/ui/card";
+import { type Product } from "../types";
 
-export const ProductCard = () => {
+export const ProductCard = ({ product }: { product: Product }) => {
   return (
-<Card className='shadow-lg'>
-
-  <CardHeader>
-  <Image src="/iphone.jpeg" alt='iphone' width={900} className='w-full' height={900}/>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card Description</CardDescription>
-  </CardHeader>
-  <CardContent>
-    <p>Card Content</p>
-  </CardContent>
-  <CardFooter>
-    <p>Card Footer</p>
-  </CardFooter>
-</Card>
-  )
-}
+    <Card className="shadow-lg">
+      <CardHeader>
+        <Image
+          src={product.image ?? "https://via.placeholder.com/150"}
+          alt="iphone"
+          width={900}
+          className="w-full"
+          height={900}
+        />
+        <CardTitle>{product.name}</CardTitle>
+        <CardDescription>{product.price}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>{product.quantity}</p>
+      </CardContent>
+    </Card>
+  );
+};
