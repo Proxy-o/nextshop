@@ -11,23 +11,20 @@ import { type Product } from "../types";
 
 export const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <Card className="shadow-lg">
-      <CardHeader>
+    <Card className="max-w-[20rem] pb-2 shadow-lg hover:shadow-xl">
+      <CardHeader className="p-0">
         <Image
           src={product.image || "https://via.placeholder.com/150"}
           alt="iphone"
           width={900}
-          className="w-full"
+          className="max-h-[20rem] rounded-md transition-all hover:scale-[1.02]"
           height={900}
         />
         <CardTitle className="text-center">{product.name}</CardTitle>
         <CardDescription className="text-center">
-          {product.price}
+          {product.price} $
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <p>{product.quantity}</p>
-      </CardContent>
     </Card>
   );
 };
