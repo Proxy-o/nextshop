@@ -11,7 +11,7 @@ import { type Product } from "../types";
 
 export const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <Card className="max-w-[20rem] pb-2 shadow-lg hover:shadow-xl">
+    <Card className="max-w-[20rem] pb-2 shadow-lg hover:cursor-pointer hover:shadow-xl">
       <CardHeader className="p-0">
         <Image
           src={product.image || "https://via.placeholder.com/150"}

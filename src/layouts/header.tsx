@@ -77,7 +77,7 @@ export const Header = () => {
             {data ? (
               <div className="flex items-center  ">
                 <Avatar className="mr-3">
-                  <AvatarImage src={data.user.image!} alt="@shadcn" />
+                  <AvatarImage src={data.user.image || "null"} alt="@shadcn" />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <AiOutlineLogout

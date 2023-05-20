@@ -18,6 +18,15 @@ export const productRouter = createTRPCRouter({
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.product.findMany();
   }),
+  getProductById: publicProcedure
+    .input(z.object({ slug: z.string() }))
+    .query(({ ctx, input }) => {
+      console.log("shiit input", input);
+
+      return ctx.prisma.product.findUnique({
+        where: { id: input.slug },
+      });
+    }),
 
   getSecretMessage: protectedProcedure.query(() => {
     return "you can now see this secret message!";
